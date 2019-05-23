@@ -26,10 +26,10 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {return UITableViewCell()}
-        cell.textLabel?.text = array[indexPath.row]
-        cell.imageView?.image = UIImage(named: array[indexPath.row])
-        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
-        cell.imageView?.clipsToBounds = true
+        cell.nameLabel.text = array[indexPath.row]
+        cell.placeImageView.image = UIImage(named: array[indexPath.row])
+        cell.placeImageView.layer.cornerRadius = cell.placeImageView.frame.size.height / 2
+        cell.placeImageView.clipsToBounds = true
         return cell
     }
     

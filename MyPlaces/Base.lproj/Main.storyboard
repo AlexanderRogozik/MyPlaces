@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--My Places-->
         <scene sceneID="tne-QT-ifu">
@@ -23,18 +28,74 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="iUz-v0-63p">
-                                    <rect key="frame" x="0.0" y="150" width="414" height="1"/>
+                                    <rect key="frame" x="0.0" y="113" width="414" height="1"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainTableViewCell" rowHeight="122" id="PQk-OW-dhS" customClass="MainTableViewCell" customModule="MyPlaces" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="122"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainTableViewCell" rowHeight="85" id="PQk-OW-dhS" customClass="MainTableViewCell" customModule="MyPlaces" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PQk-OW-dhS" id="pbJ-gI-G7m">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="121.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dkv-hH-hok">
+                                                    <rect key="frame" x="15" y="10" width="65" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="31q-zZ-rjC"/>
+                                                        <constraint firstAttribute="height" constant="65" id="s8X-Yt-rpb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EK-kb-ZjS">
+                                                    <rect key="frame" x="95" y="9" width="299" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="YTX-tA-EOZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gq-Wk-WlX">
+                                                    <rect key="frame" x="95" y="35" width="303" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="0XV-Uy-L2b"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvg-bo-qI4">
+                                                    <rect key="frame" x="95" y="54" width="299" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="PQn-C9-NMJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat Medium" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zvg-bo-qI4" secondAttribute="trailing" constant="20" id="06P-YG-mad"/>
+                                                <constraint firstItem="9EK-kb-ZjS" firstAttribute="leading" secondItem="Dkv-hH-hok" secondAttribute="trailing" constant="15" id="Eji-L0-4fA"/>
+                                                <constraint firstItem="9gq-Wk-WlX" firstAttribute="top" secondItem="9EK-kb-ZjS" secondAttribute="bottom" constant="5" id="GVr-HX-ChY"/>
+                                                <constraint firstAttribute="bottom" secondItem="zvg-bo-qI4" secondAttribute="bottom" constant="9.5" id="IjT-fH-Qtb"/>
+                                                <constraint firstItem="9gq-Wk-WlX" firstAttribute="leading" secondItem="Dkv-hH-hok" secondAttribute="trailing" constant="15" id="T9Y-J0-5Pj"/>
+                                                <constraint firstItem="9EK-kb-ZjS" firstAttribute="top" secondItem="pbJ-gI-G7m" secondAttribute="top" constant="9" id="TWw-nN-MfN"/>
+                                                <constraint firstItem="zvg-bo-qI4" firstAttribute="top" secondItem="9gq-Wk-WlX" secondAttribute="bottom" constant="1" id="VkA-9M-FAt"/>
+                                                <constraint firstItem="Dkv-hH-hok" firstAttribute="centerY" secondItem="pbJ-gI-G7m" secondAttribute="centerY" id="YDy-Se-ReD"/>
+                                                <constraint firstItem="zvg-bo-qI4" firstAttribute="leading" secondItem="Dkv-hH-hok" secondAttribute="trailing" constant="15" id="fSz-zo-IYd"/>
+                                                <constraint firstAttribute="trailing" secondItem="9EK-kb-ZjS" secondAttribute="trailing" constant="20" id="fTd-1V-N6M"/>
+                                                <constraint firstItem="Dkv-hH-hok" firstAttribute="leading" secondItem="pbJ-gI-G7m" secondAttribute="leading" constant="15" id="oys-8W-9pc"/>
+                                                <constraint firstAttribute="trailing" secondItem="9gq-Wk-WlX" secondAttribute="trailing" constant="16" id="x6M-ed-ZbX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="locationLabel" destination="9gq-Wk-WlX" id="wOM-qJ-UZI"/>
+                                            <outlet property="nameLabel" destination="9EK-kb-ZjS" id="noU-fu-EDl"/>
+                                            <outlet property="placeImageView" destination="Dkv-hH-hok" id="jvJ-wF-Xsh"/>
+                                            <outlet property="typeLabel" destination="zvg-bo-qI4" id="E6a-k6-ijs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
