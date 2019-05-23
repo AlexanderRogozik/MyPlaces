@@ -32,6 +32,7 @@
 		86DC705D2296E89700C2782B /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86DC704A2296E87200C2782B /* Montserrat-Italic.ttf */; };
 		86DC705E2296E89700C2782B /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86DC704B2296E87200C2782B /* Montserrat-SemiBoldItalic.ttf */; };
 		86DC705F2296E89700C2782B /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86DC704C2296E87200C2782B /* Montserrat-ExtraBoldItalic.ttf */; };
+		86DC70612296F3EC00C2782B /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DC70602296F3EC00C2782B /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		86DC704A2296E87200C2782B /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		86DC704B2296E87200C2782B /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		86DC704C2296E87200C2782B /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		86DC70602296F3EC00C2782B /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				86DC6FE92295A9AC00C2782B /* AppDelegate.swift */,
 				86DC6FEB2295A9AC00C2782B /* ViewController.swift */,
+				86DC70602296F3EC00C2782B /* PlaceModel.swift */,
 				86DC6FFB2295AD4D00C2782B /* MainTableViewCell.swift */,
 				86DC6FED2295A9AC00C2782B /* Main.storyboard */,
 				86DC6FF02295A9AF00C2782B /* Assets.xcassets */,
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DC6FEC2295A9AC00C2782B /* ViewController.swift in Sources */,
+				86DC70612296F3EC00C2782B /* PlaceModel.swift in Sources */,
 				86DC6FFC2295AD4D00C2782B /* MainTableViewCell.swift in Sources */,
 				86DC6FEA2295A9AC00C2782B /* AppDelegate.swift in Sources */,
 			);
