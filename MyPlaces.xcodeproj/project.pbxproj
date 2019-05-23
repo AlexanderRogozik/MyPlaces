@@ -12,6 +12,7 @@
 		86DC6FEF2295A9AC00C2782B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DC6FED2295A9AC00C2782B /* Main.storyboard */; };
 		86DC6FF12295A9AF00C2782B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DC6FF02295A9AF00C2782B /* Assets.xcassets */; };
 		86DC6FF42295A9AF00C2782B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DC6FF22295A9AF00C2782B /* LaunchScreen.storyboard */; };
+		86DC6FFC2295AD4D00C2782B /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DC6FFB2295AD4D00C2782B /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		86DC6FF02295A9AF00C2782B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86DC6FF32295A9AF00C2782B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86DC6FF52295A9AF00C2782B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86DC6FFB2295AD4D00C2782B /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				86DC6FE92295A9AC00C2782B /* AppDelegate.swift */,
 				86DC6FEB2295A9AC00C2782B /* ViewController.swift */,
+				86DC6FFB2295AD4D00C2782B /* MainTableViewCell.swift */,
 				86DC6FED2295A9AC00C2782B /* Main.storyboard */,
 				86DC6FF02295A9AF00C2782B /* Assets.xcassets */,
 				86DC6FF22295A9AF00C2782B /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DC6FEC2295A9AC00C2782B /* ViewController.swift in Sources */,
+				86DC6FFC2295AD4D00C2782B /* MainTableViewCell.swift in Sources */,
 				86DC6FEA2295A9AC00C2782B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TTN2284237;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TTN2284237;
 				INFOPLIST_FILE = MyPlaces/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
