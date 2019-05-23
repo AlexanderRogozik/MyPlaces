@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBAction func cancelAction(_segue : UIStoryboardSegue) {}
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
         tableView.delegate = self
         // Do any additional setup after loading the view.
     }
