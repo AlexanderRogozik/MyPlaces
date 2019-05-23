@@ -10,6 +10,9 @@ import UIKit
 
 class NewPlaceTableViewController: UITableViewController {
 
+    @IBOutlet weak var imageVIew: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -17,15 +20,21 @@ class NewPlaceTableViewController: UITableViewController {
     
     
     func createAlertController() {
+        let cameraIcon = #imageLiteral(resourceName: "camera")
+        let photoIcon = #imageLiteral(resourceName: "photo")
         let actionSheetAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cameraAlertAction = UIAlertAction(title: "Camera", style: .default) { (action) in
             //TODO: - chooseImagePicker
             self.chooseImagePicker(source: .camera)
         }
+        cameraAlertAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+        cameraAlertAction.setValue(cameraIcon, forKey: "image")
         let photoAlertAction = UIAlertAction(title: "Photo", style: .default) { (action) in
             //TODO: - chooseImagePicker
             self.chooseImagePicker(source: .photoLibrary)
         }
+        photoAlertAction.setValue(photoIcon, forKey: "image")
+        photoAlertAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
         let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel)
         actionSheetAlert.addAction(cameraAlertAction)
         actionSheetAlert.addAction(photoAlertAction)
@@ -61,10 +70,20 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
 
 //MARK: - ImagePicker
 
-extension NewPlaceTableViewController {
+extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageVIew.image = info[.editedImage] as? UIImage
+        imageVIew.contentMode = .scaleAspectFill
+        imageVIew.clipsToBounds = true
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
     func chooseImagePicker(source : UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
             present(imagePicker, animated: true)
