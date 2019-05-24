@@ -6,23 +6,20 @@
 //  Copyright © 2019 Александр Рогозик. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 
-struct Place {
-    var name: String
-    var location: String
-    var type : String
-    var image : String
+class Place: Object {
     
-   static let arrayPlaces = ["Балкан Гриль","Бочка","Вкусные истории","Дастархан","Индокитай","Классик","Шок"]
+    @objc dynamic var name = ""
+    @objc dynamic var location: String?
+    @objc dynamic var type : String?
+    @objc dynamic var imageDataq : Data?
     
-   static func getPlaces() -> [Place] {
-        
-        var places = [Place]()
-        
-        for place in arrayPlaces {
-            places.append(Place(name: place, location: "Minsk", type: "Ресторан", image: place))
-        }
-        return places
+    convenience init(name : String, location: String?, type: String?, imageDataq : Data?){
+        self.init()
+        self.name = name
+        self.location = location
+        self.type = type
+        self.imageDataq = imageDataq
     }
 }

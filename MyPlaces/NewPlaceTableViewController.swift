@@ -11,12 +11,24 @@ import UIKit
 class NewPlaceTableViewController: UITableViewController {
 
     @IBOutlet weak var imageVIew: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var placeNameLabel: UITextField!
+    @IBOutlet weak var locationPlaceLabal: UITextField!
+    @IBOutlet weak var typePlaceLabel: UITextField!
     
+    var imageIsChange = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        saveButton.isEnabled = false
+        placeNameLabel.addTarget(self, action: #selector(textFieldChange), for: .editingChanged)
     }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     
     func createAlertController() {
@@ -61,9 +73,34 @@ class NewPlaceTableViewController: UITableViewController {
 extension NewPlaceTableViewController: UITextFieldDelegate {
     // Hide Keybord
     
+    @objc private func textFieldChange() {
+        if placeNameLabel.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        }else {
+            saveButton.isEnabled = false
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func saveNewPlace() {
+        
+        var image : UIImage?
+        
+        if imageIsChange {
+            image = imageVIew.image
+        }else{
+            image = #imageLiteral(resourceName: "imagePlaceholder")
+        }
+        let imageData = image?.pngData()
+    
+        let newPlace = Place(name: placeNameLabel.text!, location: locationPlaceLabal.text, type: typePlaceLabel.text, imageDataq: imageData)
+        
+        StorageManager.saveObject(newPlace)
+    
     }
 }
 
@@ -73,9 +110,13 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
 extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         imageVIew.image = info[.editedImage] as? UIImage
         imageVIew.contentMode = .scaleAspectFill
         imageVIew.clipsToBounds = true
+        
+        imageIsChange = true
+        
         dismiss(animated: true, completion: nil)
         
     }
