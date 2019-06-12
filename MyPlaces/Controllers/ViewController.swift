@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -81,6 +82,10 @@ class ViewController: UIViewController {
             places = places.sorted(byKeyPath: "name", ascending: ascendingSorted)
         }
         tableView.reloadData()
+    }
+    
+    deinit {
+        print("deinit", ViewController.self)
     }
 }
 extension ViewController : UITableViewDataSource, UITableViewDelegate {

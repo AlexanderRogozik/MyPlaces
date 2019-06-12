@@ -85,7 +85,9 @@ class NewPlaceTableViewController: UITableViewController {
         }
         
     }
-
+    deinit {
+        print("deinit", NewPlaceTableViewController.self)
+    }
 }
 
 //MARK TextFieldDelegate
@@ -126,7 +128,7 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
         }
     }
     
-    
+   
 }
 
 
